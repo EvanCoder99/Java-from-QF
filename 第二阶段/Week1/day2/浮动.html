@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.wid{
+				width: 150px;
+				height: 150px;
+				
+			}
+			.a{
+				background-color: red;
+				float: left;/* 浮动到右边 */
+			}
+			.b{
+				background-color: green;
+				float: left;
+			}
+			.c{
+				background-color: blue;
+				float: left;
+			}
+			.parent{
+				width: 449px;
+				outline: gold 2px dashed;
+				overflow: hidden;
+			}
+			.clear{
+				clear: both;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parent">
+			<div class="a wid"></div>
+			<div class="b wid"></div>
+			<div class="c wid"></div>
+		</div>
+		<div class="clear">ddd</div>
+	</body>
+</html>
