@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<!-- 
+		 3. 用户注册功能:
+		 表单中有用户名,密码,确认密码,及注册按钮;
+		 a. 输入用户名, 失去焦点后, 如果用户名已存在则在右侧span标签提示红色的"用户名已存在"(假设用户名为"zs"为已存在)
+		 b. 如果点击用户名后, 没有输入,继续输入密码,则在右侧提示红色的"用户名不能为空"
+		 c. 如果输入非"zs", js中校验正确,则失去焦点后,右侧提示绿色的"恭喜可用"
+		 --> 
+		 用户名<input type="text" onblur="myBlur(this)" id="user"><span id="msg"></span><br>
+		 密　　码<input type="password" onblur="myBlur(this)" id="pw" value="" ><br>
+		 确认密码<input type="password" id="pw2" value=""><br>
+		 <input type="button" value="注册" id="btn">
+		 <a id="aa">dd</a>
+		 
+		 <script>
+			 var a = document.getElementById("aa");
+			 a.style.color = "red";
+			 function myBlur(o){
+				 var user = document.getElementById("user");
+				 var msg = document.getElementById("msg");
+				 if(user.value=="zs"){
+					 msg.innerHTML="用户名已存在";
+					 msg.style="color: red;";
+				 }
+				 if(user.value == ""){
+					 msg.innerHTML="用户名不能为空";
+					 msg.style="color: red;";
+				 }
+				 if(user.value!=="zs"){
+					 msg.innerHTML="恭喜可用";
+					 msg.style="color: green;";
+				 }
+			 }
+			 
+		 </script>
+	</body>
+</html>

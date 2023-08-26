@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="aa" onclick="myclick1()">一级标题</h1>
+		
+		<h1 onclick="myclick2(this)">一级标题</h1>
+
+		<h2 onclick="this.innerHTML='凤姐'">二级标签</h2>
+		
+		<script>
+			function myclick1(){
+			    var obj = document.getElementById("aa"); //DOM操作
+			    obj.innerHTML="郭德纲";
+			}
+			
+		    function myclick2(obj){
+		        obj.innerHTML="郭德纲";
+		    }
+			
+			//扩展---DOM获取元素对象--通过元素对象操作事件
+			// var obj = document.getElementById("aa");
+			// obj.onclick = function(){
+			// 	alert("点击事件的触发");
+			// }
+		</script>
+	</body>
+</html>

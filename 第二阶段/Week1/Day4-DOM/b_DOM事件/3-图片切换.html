@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="../img/002.png" alt="" id="img">
+		<input type="button" value="改变图片" onclick="myclick()">
+		<script>
+			var OK = true;
+			function myclick(){
+				var img = document.getElementsByTagName("img")[0];
+				// var img = document.getElementById("img");
+				if(OK){
+					img.src="../img/004.png"
+				}else{
+					img.src="../img/002.png"
+				}
+				OK = !OK;
+			}
+		</script>
+	</body>
+</html>

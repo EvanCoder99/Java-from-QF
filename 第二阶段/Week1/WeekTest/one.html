@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		 （1）、使用prompt()方法输入考试科目的数量，要求数量必须是非零、非负数的数值类型，否则给出相应提示并退出程序
+		 根据考试科目的数量，使用prompt()方法输入各科的考试成绩并累加，要求成绩必须是非负数的数值类型，否则给出相应提示并退出程序，如果各项输入正确，则弹出总成绩
+		 -->
+		 
+		 <script type="text/javascript">
+			 var sum =0;
+		 	var num = prompt("输入考试科目的数量：");
+			if(num==0 || num<0){
+				alert("数量不能为0和负数！");
+			}else{
+				for(var i=1;i<=num;i++){
+					var cj = prompt("请输入第"+i+"科的成绩");
+					if(cj == 0 || cj < 0){
+						alert("数量不能为0和负数！");
+					}else{
+						var c = parseInt(cj);
+						sum+=c;
+					}
+				}
+				alert(parseInt(sum));
+			}
+			
+			
+		 </script>
+		 
+	</body>
+</html>

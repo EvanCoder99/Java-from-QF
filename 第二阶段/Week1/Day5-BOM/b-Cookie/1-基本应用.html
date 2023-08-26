@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="设置Cookie" onclick="setCook()" />
+		<input type="button" value="获取Cookie" onclick="getCook()" />
+		<input type="button" value="清除Cookie" onclick="clearCook()" />
+		
+		<script>
+			function setCook(){
+				var date = new Date();
+				date.setTime(date.getTime()+1000*60*60*24);//生效时间=当前时间+有效期
+				document.cookie = "username=zs;expires="+date.toGMTString();//时间转成字符串
+				alert("设置Cookie成功~");
+			}
+			
+			function getCook(){
+				alert(document.cookie);
+			}
+			
+			function clearCook(){
+				var date = new Date();
+				document.cookie = "username=123;expires="+date.toMGTString();
+				alert("清除Cookie成功~")
+			}
+		</script>
+	</body>
+</html>

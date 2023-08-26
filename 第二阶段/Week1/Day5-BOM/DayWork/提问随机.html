@@ -1,0 +1,160 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>抽奖案例随机数-jq22.com</title>
+<script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<style>
+* {
+	margin:0;
+	padding:0;
+}
+.zhiti {
+	width:1000px;
+	height:1000px;
+	margin:auto;
+}
+.kaishi {
+	width:100px;
+	height:30px;
+	border:2px solid yellowgreen;
+	text-align:center;
+	line-height:30px;
+	float:left;
+	margin-left:390px;
+    background:gold;
+}
+.tingzhi {
+	width:100px;
+	height:30px;
+	border:2px solid yellowgreen;
+	text-align:center;
+	line-height:30px;
+	float:right;
+	margin-right:390px;
+	background:red;
+}
+ul{
+    overflow:hidden;
+    width:1000px;
+}
+ul li {
+	list-style:none;
+	width:70px;
+	height:50px;
+	background:yellowgreen;
+	float:left;
+	text-align:center;
+	line-height:50px;
+	margin-top:15px;
+	margin-left:44px;
+}
+.bot {
+	width:300px;
+	height:30px;
+	border:3px solid silver;
+	position:fixed;
+	bottom:560px;
+	left:550px;
+}
+</style>
+</head>
+<body>
+<div class="zhiti">
+    <div class="kaishi" id="kaishi">
+        <p>开始</p>
+    </div>
+    <div class="tingzhi" id="tingzhi">
+        <p>停止</p>
+    </div>
+    <ul>
+        <li>王荣</li>
+		<li>韦荣</li>
+		<li>卢维安</li>
+		<li>梁文瀚</li>
+		<li>何文豪</li>
+		<li>王煦研</li>
+		<li>黄华强</li>
+		<li>黄俊达</li>
+		<li>何家福</li>
+		<li>唐杰</li>
+		<li>霍陆科</li>
+		<li>胡龙</li>
+		<li>邓达祯</li>
+		<li>杨泽龙</li>
+		<li>黄可信</li>
+		<li>李高翔</li>
+		<li>淦博君</li>
+		<li>黄照华</li>
+		<li>廉银</li>
+		<li>范遥远</li>
+		<li>谢冠展</li>
+		<li>龙瑞</li>
+		<li>王广浩</li>
+		<li>袁阿文</li>
+		<li>杨凯兴</li>
+		<li>朱子豪</li>
+		<li>张哲</li>
+		<li>朱涛</li>
+		<li>许乃威</li>
+		<li>陈志强</li>
+		<li>王伦贲</li>
+		<li>方含</li>
+		<li>汪邦治</li>
+		<li>淦方华</li>
+		<li>章宇光</li>
+		<li>王奕升</li>
+		<li>韦林力</li>
+		<li>刘子昂</li>
+		<li>曾钦萍</li>
+		<li>张勇</li>
+		<li>丁文欣</li>
+		<li>张旭</li>
+		<li>张乐</li>
+		<li>黄伟</li>
+		<li>朱清风</li>
+		<li>曾文渊</li>
+		<li>林一鹏</li>
+		<li>赵祖灿</li>
+    </ul>
+</div>
+
+<script>
+var oKaishi = document.getElementById("kaishi");
+var oTing = document.getElementById("tingzhi");
+var aLis = document.getElementsByTagName("li");
+var oTxt = document.getElementById("bot")
+var timer = null;
+var index = 0;
+oKaishi.onclick = function() {
+    clearInterval(timer)
+    timer = setInterval(function() {
+        index = Math.floor(Math.random() * aLis.length);
+        for (var i = 0; i < aLis.length; i++) {
+            aLis[i].style.background = "greenyellow";
+
+        }
+        aLis[index].style.background = "red"
+
+    }, 30)
+};
+oTing.onclick = function() {
+    clearInterval(timer);
+    oTxt.innerHTML = aLis[index].innerHTML + "中奖了";
+}
+
+oKaishi.onclick = function() {
+    clearInterval(timer)
+    timer = setInterval(function() {
+        index = Math.floor(Math.random() * aLis.length);
+        for (var i = 0; i < aLis.length; i++) {
+            aLis[i].style.background = ""
+        }
+        aLis[index].style.background = "yellow"
+
+    }, 30)
+}
+</script>
+
+</body>
+</html>

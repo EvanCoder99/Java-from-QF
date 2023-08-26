@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			table{
+				/* background-color: greenyellow; */
+			}
+			td{
+				width: 100px;
+				height: 100px;
+				background-color: gold;
+			}
+			div{
+				width: 110px;
+				margin: 0 auto;
+			}
+			input{
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+		2. 做一个随机抽奖的九宫格，初始绿色，点击“开始”按钮，则随机计时选中格子变红，点击“结束”则停止随机，选中停止后的格子 
+		 -->
+		 <table border="1" align="center">
+			 <tr>
+				 <td></td>
+				 <td></td>
+				 <td></td>
+			 </tr>
+			 <tr>
+				 <td></td>
+				 <td></td>
+				 <td></td>
+			 </tr>
+			 <tr>
+				 <td></td>
+				 <td></td>
+				 <td></td>
+			 </tr>
+		 </table>
+		 <div>
+			 <input type="button" value="开始" onclick="mystart()">
+			  <input type="button" value="结束" onclick="myend()">
+		 </div>
+		 
+		 <script>
+			 var td = document.getElementsByTagName("td");
+			 var s = null;
+			 var index = 0;
+			 var loop = true;
+			
+			 function mystart(){
+					 
+					 clearInterval(s);
+					 loop = false;
+					 s = setInterval(function(){
+					 index = Math.floor(Math.random()*td.length);//Math.floor() 函数总是返回小于等于一个给定数字的最大整数。
+					 // debugger
+					 for(var i=0; i<td.length; i++){
+						 td[i].style.background = "greenyellow";
+					 }
+					 td[index].style.background = "red";
+					 },100);
+				 }
+			 
+			 
+			 function myend(){
+				 
+				 clearInterval(s);
+				 loop = true;
+			 }
+			 
+		
+		 </script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<img src="./img/003.png" alt="" id="img">
+		
+		<input type="button" value="改变" onclick="myClick()"/>
+		
+		<script>
+			var imgArr = new Array();
+			imgArr[0] = "img/003.png";
+			imgArr[1] = "img/005.png";
+			imgArr[2] = "img/006.png";
+			imgArr[3] = "img/007.png";
+			var i = 1;
+			function myClick(){
+				var img = document.getElementById("img");
+						/* if(i==0){
+							img.src=imgArr[i++];
+						}else if(i<imgArr.length){
+							img.src=imgArr[i++];
+						}else if(i == imgArr.length){
+							i=0;
+							img.src=imgArr[i++];
+						} */
+						
+						if(i == imgArr.length){
+							i=0;
+						}
+						img.src=imgArr[i++];
+					}
+		</script>
+	</body>
+</html>

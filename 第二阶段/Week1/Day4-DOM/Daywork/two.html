@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		 2. 用户注册功能:
+		 表单中有用户名,密码,确认密码,及注册按钮;
+		 a.如果直接点"注册",则提示"用户名或密码及确认密码不能为空"
+		 b. 如果输入的密码和确认密码不正确, 点击"注册",则提示"密码和确认密码不正确"
+		 注意：有错误，则不能提交   
+		 sumbit事件返回 return true-默认可提交  return false-不能提交 （onsubmit="return mysub()"）
+		 -->
+		 
+		 
+		 用户名<input type="text"><br>
+		 密　　码<input type="password" id="pw" value=""><br>
+		 确认密码<input type="password" id="pw2" value=""><br>
+		 <input type="button" value="注册" id="btn" onclick="mysub()" onsubmit="return mysub()">
+		 
+		 <script>
+
+			 function mysub(){
+				 var pw = document.getElementById("pw");
+				 var pw2 = document.getElementById("pw2");
+				 var obj = document.getElementById("btn");
+				 if((pw.value != pw2.value) || (pw.value == "" || pw2.value == "")){
+					 alert("密码和确认密码不正确");
+					 return false;
+				 }
+			 }
+		 </script>
+	</body>
+</html>

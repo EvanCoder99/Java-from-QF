@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="添加段落" onclick="add()" />
+		<input type="button" value="删除段落" onclick="del()" />
+		<p id="one">段落1</p>
+
+	<script>
+		function add(){
+			//创建元素
+			var p =document.createElement("p");//<p></p>
+			p.innerHTML = "新段落";//<p>新段落</p>
+			var body = document.getElementsByTagName("body")[0];
+			body.appendChild(p);
+		}
+		
+		// function del(){
+		// 	var body = document.getElementsByTagName("body")[0];
+		// 	var p = document.getElementsByTagName("p")[0];
+		
+		// 	body.removeChild(p);
+			
+		// }
+		
+		function del(){
+			var body = document.getElementsByTagName("body")[0];
+			var p = document.getElementsByTagName("p")[0];
+			if(p){	//p不为null就删除
+				body.removeChild(p);
+			}
+		}
+	</script>
+	</body>
+</html>

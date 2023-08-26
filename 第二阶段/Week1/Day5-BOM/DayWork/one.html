@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		做一个登陆表单，如果登录成功（假如用户名为“zs”，密码为“123”是正确的账户和密码），则通过cookie记录存储的账户和密码；下次打开，直接即可显示出账户和密码
+		提示：cookie的存储: "userpass=zs-123", 获取cookie时，拆用户名和密码 
+		 -->
+		
+		用户名<input type="text" name="" id="name"><br>
+		密　　码<input type="password" name="" id="pw"><br>
+		确认密码<input type="password" name="" id="pw2"><br>
+		<input type="submit" value="登录" onclick="myclick()" >
+		<script>
+			onload = function(){
+				var name = document.getElementById("name");
+				var pw = document.getElementById("pw");
+				var pw2 = document.getElementById("pw2");
+				
+				//获取cookie
+				// debugger
+				var cookie = document.cookie;//userpass=zs-123
+				var str = cookie.split("-")[0];//userpass=zs
+				var key = str.split("=")[1];//zs
+				var value = cookie.split("-")[1];//123
+				
+				if( key== "zs" && value == "123"){
+					name.value = key;
+					pw.value = value;
+					pw2.value = value;
+					alert("成功")
+				}
+				
+			 }
+			
+			function myclick(){
+				var name = document.getElementById("name");
+				var pw = document.getElementById("pw");
+				var pw2 = document.getElementById("pw2");
+				
+				var date = new Date();
+				date.setTime(date.getTime()+1000*60*60*24);//设置有效期
+				document.cookie = "userpass="+name.value+"-"+pw.value+";expires="+date.toGMTString();
+				
+				//获取cookie
+				// debugger
+				var cookie = document.cookie;//userpass=zs-123
+				var str = cookie.split("-")[0];//userpass=zs
+				var key = str.split("=")[1];//zs
+				var value = cookie.split("-")[1];//123
+				
+				if(pw.value == pw2.value && name.value == key){
+					name.value = key;
+					pw.value = value;
+					pw2.value = value;
+					alert("成功")
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>

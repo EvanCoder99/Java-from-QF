@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="a" class="aa"><a>ddd</a></h1>
+		<script>
+			//操作内容（内容就是起始标签和结束标签的值）
+			var obj = document.getElementById("a");
+			alert(obj.innerText);
+			alert(obj.innerHTML);//获取值
+			obj.innerHTML = "刘德华";
+		</script>
+	</body>
+</html>
