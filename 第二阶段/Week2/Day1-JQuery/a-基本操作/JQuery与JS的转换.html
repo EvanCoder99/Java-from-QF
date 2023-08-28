@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script src="../../jquery-3.4.1.min.js"></script>
+		<script>
+		    $(function(){
+		        //一、JS对象转JQuery对象
+				//获取JS对象
+				//将对象放入$()
+				var h1 = document.getElementById("aa");
+				$(h1).click(function(){
+					alert("JS转JQuery对象");
+				})
+		        //二、JQuery转JS对象；jquery相等于容器，下标取元素，即可得到js对象
+		        $("#aa")[0].onclick=function(){
+		            alert("jquery转js对象");
+		        }
+		    })
+		</script>
+		<h1 id="aa">我的标题</h1>
+	</body>
+</html>

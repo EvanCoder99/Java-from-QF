@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<style>
+			div{
+				width: 200px;
+				border: solid red 2px;
+			}
+		</style>
+		<script src="../jquery-3.4.1.min.js"></script>
+		<script>
+		    $(function(){
+		        $("#btn").click(function(){
+		            //$("div").append("--子元素后追加");
+		            //$("div").after("div控件后面添加内容");
+		
+		            //$("div").prepend("子元素前面追加--");
+		            //$("div").before("div控件前面添加内容");
+		
+		            //可以同时创建多个元素
+		            var txt1 = "<p>段落1</p>";
+		            var txt2 = $("<p></p>").text("段落2");
+		            var txt3 = document.createElement("p"); //JS的DOM
+		            $(txt3).text("段落3");
+		            // txt3.innerHTML = "段落3";
+		            //$("div").append(txt1,txt2,txt3);
+		            $("div").after(txt1,txt2,txt3);
+		        })
+		    })
+		</script>
+		<input type="button" value="添加元素" id="btn" />
+		<div>犯得上广泛大使馆</div>
+	</body>
+</html>
