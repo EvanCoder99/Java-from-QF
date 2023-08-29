@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script src="../jquery-3.4.1.min.js"></script>
+		<script>
+		    $(function(){
+		        //层次选择器：后代，子代，相邻兄弟，后面兄弟
+		        // $("ul a").css("color","red");   //后代的a都起作用
+		        // $("ul>a").css("color","red");   //子代的a都起作用
+		        // $("li+#bb").css("color","red");  //相邻兄弟起作用(后面的起作用)疑是地上霜
+				// $("#bb+li").css("color","red");	//举头望明月		
+		        // $("#aa~li").css("color","red");  //后面兄弟起作用（不包括#aa）
+		        // $("#bb~li").css("color","red");  //后面兄弟起作用
+		    })
+		</script>
+		<ul>
+		    <li id="aa"><a>床前明月光<a>666</a></a></li>
+		    <li id="bb"><a>疑是地上霜</a></li>
+		    <li><a>举头望明月</a></li>
+		    <a>低头思故乡</a>
+		</ul>
+	</body>
+</html>

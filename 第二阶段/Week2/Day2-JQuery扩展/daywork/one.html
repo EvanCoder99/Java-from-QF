@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 
+		注意: 默认不显示后面"内容简介"的信息; 点击"查看全部",才显示,然后"查看全部"变为"隐藏",再点击隐藏,则隐藏下面内容 
+		 -->
+
+		<div style="width: 500px;border: 1px red solid; overflow: hidden;">
+			<div style="float: left;">
+				<img src="./img/005.png" height="253px">
+			</div>
+			<div style="float: left;">
+				<h1 style="margin-top: 5px;margin-bottom: 5px;">你是人间的四月天</h1>
+				<p style="line-height: 30px;margin-top: 10px;">
+					笑响亮了四面风<br>
+					轻灵在春的光绝中交舞看变<br>
+					你是一月早天的云烟<br>
+					黄雪吹着风的款<br>
+					......<br>
+				</p>
+				<a class="lookAll" href="#">查看全部</a>
+			</div>
+		</div>
+
+		<div style="width: 500px;border: 1px solid red;" class="content" >
+			<div style=" background-color: gray;line-height: 50px;">
+				<h2 style="margin: 0 0 0 15px;color: aliceblue;">内容简介</h2>
+			</div>
+			<div style="width: 500px;">
+				　　你是人可四月天是水正图书推出的比知花液高了系列之三，
+				四月天）《你是找周心末完的诗》。这系列以前所未有的包装形式”
+				一数服道。<br>
+			</div>
+		</div>
+
+		<script src="../jquery-3.4.1.min.js"></script>
+		<script>
+			$(".lookAll").click(function(){
+				debugger
+				if($(".content").css("display") == "block"){
+					$(this).html("隐藏");
+					$(".content").css("display","none");
+				}else{
+					$(this).html("查看全部");
+					$(".content").css("display","block");
+				}											
+			})
+		</script>
+	</body>
+</html>

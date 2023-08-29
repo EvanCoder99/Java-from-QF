@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<table border="1">
+		    <tr>
+		        <th>选项</th>
+		        <th>编号</th>
+		        <th>姓名</th>
+		        <th>性别</th>
+		    </tr>
+		    <tr id="1">
+		        <td><input type="checkbox" value="1"/></td>
+		        <td>1001</td>
+		        <td>小明</td>
+		        <td>男</td>
+		    </tr>
+		    <tr id="2">
+		        <td><input type="checkbox" value="2"/></td>
+		        <td>1002</td>
+		        <td>明明</td>
+		        <td>女</td>
+		    </tr>
+		    <tr id="3">
+		        <td><input type="checkbox" value="3"/></td>
+		        <td>1003</td>
+		        <td>小红</td>
+		        <td>女</td>
+		    </tr>
+		    <tr>
+		        <td colspan="4">
+		            <span><input id="chkAll" type="checkbox" />全选</span>
+		            <span><input id="btnDel" type="button" value="删除"/></span>
+		        </td>
+		    </tr>
+		</table>
+	</body>
+	
+	<script src="../../jquery-3.4.1.min.js"></script>
+	<script>
+		
+		//全选功能
+		$("#chkAll").click(function(){
+			/* 
+			$(":checkbox:not('#chkAll')")---选中不包含“chkAll”的复选框
+			$("#chkAll").prop("checked")---获取“chkAll”的复选框的checked属性为true、false，选中了就位true
+			prop("checked",$("#chkAll").prop("checked"))---prop()获取复选框的checked属性为true、false
+			 */
+			$(":checkbox:not('#chkAll')").prop("checked",$("#chkAll").prop("checked"));
+		})
+		
+		//选中单个复选框
+		var arr = $(":checkbox:not('#chkAll')");//只包含选项复选框
+		arr.click(function(){
+			var select = $(":checked:not('#chkAll')")//勾选的复选框
+			$("#chkAll").prop("checked",arr.length == select.length);//相等则勾选
+		})
+		
+		//删除选项
+		
+		$("#btnDel").click(function(){
+			//选中的选项
+			var select = $(":checked:not('#chkAll')");
+			//td--> tr
+			var tr = select.parents("tr");
+			tr.remove();
+			arr = $(":checkbox:not('#chkAll')");
+		})
+	</script>
+</html>

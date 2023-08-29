@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		 
+		 <div style="border: 1px red solid;">
+			 用户名<input type="text" name="" id="name"><br>
+			 密码<input type="password" name="" id=""><br>
+			 年龄<input type="text" name="" id="age"><br>
+			 <input type="submit" value="提交">
+		 </div>
+		 <div>
+			 <table border="1">
+				 <tr class="title">
+					 <th>用户名</th>
+					 <th>密码</th>
+					 <th>年龄</th>
+					 <th>操作</th>
+				 </tr>
+			 </table>
+		 </div>
+		 
+		 <script src="../jquery-3.4.1.min.js"></script>
+		 <script>
+			 /* 
+			 2. 有一个表单,有用户名,密码,年龄及提交选项; 点击提交后, 在下面的表格中产生一条记录;
+			 注意:
+			    1. 初始会有一条表格头信息,只是在后面追加记录
+			    2. 信息头为用户名,密码,年龄,操作
+			    3. 点击删除操作, 可以删除指定记录 
+			 */
+			//在表格后追加记录
+			$(":submit").click(function(){
+				var username = $("#name").val();
+				var pw = $(":password").val();
+				var age = $("#age").val();
+				$("table").append("<tr><td>"+username+"</td><td>"+pw+"</td><td>"+age+"</td><td><input type='button' value='删除' class='del'></td></tr>");	
+				
+				$(".del").click(function(){
+					$(this).parents("tr").remove();
+				})
+			})
+			
+			
+		 </script>
+	</body>
+</html>
