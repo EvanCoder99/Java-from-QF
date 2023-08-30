@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="button" value="加载数据"><br>
+    <div>...</div>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $("input").click(function () {
+            $.get("load.jsp",function (date) {
+                $("div").html(date);
+            })
+        })
+
+    </script>
+</body>
+</html>
