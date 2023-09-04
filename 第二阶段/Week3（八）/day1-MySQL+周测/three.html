@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <select name="" id="s">
+            <option>广东省</option>
+            <option>江西省</option>
+        </select>
+        <div></div>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script>
+            $("#s").change(function (){
+                var city = $("#s").val();
+                $.get("three.jsp",{s:city},function (data){//参数将以请求体方式传到服务器
+                    $("div").html(data);
+                });
+            })
+        </script>
+    </body>
+</html>

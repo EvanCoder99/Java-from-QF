@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				width: 500px;
+				/* border: 1px solid red; */
+			}
+			table{
+				width: 500px;
+				border-collapse: collapse;
+				border: 1px solid gainsboro;
+			}
+			td,th{
+				border: 1px solid gainsboro;
+				
+			}
+			#first{
+				/* width: 80px; */
+				text-align: center;
+			}
+			a{
+				color:#9650B3;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div align="center">用户信息表格</div>
+		<div  align="center">
+			<table>
+				<tr>
+					<th id="first"><input type="checkbox" name="" id="all">全选</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>出生日期</th>
+					<th>所在城市</th>
+					<th>操作</th>
+				</tr>
+				<tr>
+					<td id="first"><input type="checkbox" name="" id=""></td>
+					<td>张三</td>
+					<td>男</td>
+					<td>1999年03月</td>
+					<td>广州</td>
+					<td><a href="#">编辑</a>&nbsp;|&nbsp;<a href="#" class="delete">删除</a></td>
+				</tr>
+				<tr>
+					<td id="first"><input type="checkbox" name="" id=""></td>
+					<td>李四</td>
+					<td>男</td>
+					<td>2000年06月</td>
+					<td>深圳</td>
+					<td><a href="#">编辑</a>&nbsp;|&nbsp;<a href="#" class="delete">删除</a></td>
+				</tr>
+				<tr>
+					<td id="first"><input type="checkbox" name="" id=""></td>
+					<td>小明</td>
+					<td>男</td>
+					<td>2010年06月</td>
+					<td>杭州</td>
+					<td><a href="#">编辑</a>&nbsp;|&nbsp;<a href="#" class="delete">删除</a></td>
+				</tr>
+				<tr>
+					<td id="first"><input type="checkbox" name="" id=""></td>
+					<td>玛丽</td>
+					<td>女</td>
+					<td>2007年09月</td>
+					<td>北京</td>
+					<td><a href="#">编辑</a>&nbsp;|&nbsp;<a href="#" class="delete">删除</a></td>
+				</tr>
+			</table>
+		</div>
+		<div  align="center" style="margin-top: 5px;">
+			<input type="button" value="删除选中..." class="deleteSel">
+		</div>
+		
+		<script src="jquery-3.4.1.min.js"></script>
+		<script>
+			//全选
+			$("#all").click(function(){
+				$(":checkbox:not('#all')").prop("checked",$("#all").prop("checked"));
+			})
+			
+			var arr = $(":checkbox:not('#all')");
+			arr.click(function(){
+				var select = $(":checked:not('#all')");
+				$("#all").prop("checked",select.length == arr.length);
+			})
+			
+			//删除
+			$(".deleteSel").click(function(){
+				var select = $(":checked:not('#all')");
+				var tr = select.parents("tr");
+				tr.remove();
+				arr = $(":checkbox:not('#all')");//更新单选框的个数
+			})
+			
+			//删除选中
+			$(".delete").click(function(){
+				var select = $(":checked:not('#all')");
+				var tr = select.parents("tr");
+				tr.remove();
+				arr = $(":checkbox:not('#all')");//更新单选框的个数
+			})
+		</script>
+	</body>
+</html>
