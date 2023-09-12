@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <!--
+        加了"/"是绝对路径，从站点出发的路径（不带上下文）
+        不加"/"是相对路径，相对于当前的上下文路径（当前上下文是/content ）
+
+        /my2，就是绝对路径，localhost:8080/my2?username=XX&password=XX
+         my2，就是相对路径，localhost:8080/content/my2?username=22&password=33
+         如果上下文只是"/"，那就无所谓
+        -->
+        <form action="login" method="get">
+            用户名：<input type="text" name="username"><br>
+            密码:<input type="text" name="password"><br>
+            <input type="submit" value="提交">
+        </form>
+    </body>
+</html>
