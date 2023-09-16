@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <form action="login" method="get">
+            用户名：<input type="text" name="username"><br>
+            密　码：<input type="text" name="password"><br>
+            验证码：<input type="text" name="code" id="">
+            <img src="valid" onclick="change(this)" border="1"><br>
+            <input type="submit" value="提交">
+        </form>
+
+        <script>
+            function change(obj) {
+                alert();
+                obj.src = "valid?date"+new Date();//清缓存
+            }
+        </script>
+    </body>
+</html>

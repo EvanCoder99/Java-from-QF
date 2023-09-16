@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <!--加了"/"是绝对路径，从站点出发的路径（不带上下文）
+            不加"/"是相对路径，相对于当前的上下文路径      -->
+        <!--第一次访问，没有拼其他的路径，可以不用加"/" 因为是发起者-->
+        <!--如果要加"/"，是绝对路径，不带上下文从站点出发，浏览器需要添加上下文路径：/emp/manage/login -->
+        <form action="manage/login" method="get">
+            用户名：<input type="text" name="username"><br>
+            密　码：<input type="text" name="password"><br>
+            <input type="submit" value="提交">
+        </form>
+
+    </body>
+</html>
